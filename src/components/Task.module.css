@@ -1,0 +1,50 @@
+.taskForm {
+    display: flex;
+    margin-top: -1rem; 
+}
+
+.taskBox {
+    width: 39.875rem;
+    background: var(--gray-500);
+    color: var(--gray-300);
+    padding: 1rem;
+}
+
+.taskBox:focus-within {
+    color: var(--gray-100);
+}
+
+.taskCreate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue-500);
+    color: var(--gray-100);
+    font-size: 0.875rem;
+    font-weight: bold;
+    padding: 0.875rem;
+    margin-left: 0.5rem;
+
+    cursor: pointer;
+    transition: color 0.1s, background-color 0.1s;
+}
+
+.taskCreate:hover {
+    background-color: var(--blue-300);
+}
+
+.taskCreateIcon {
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.taskBox,
+.taskCreate {
+    border-radius: 8px;
+    border-style: none;
+}
+
+img {
+    display: flex;
+    background: transparent;
+}
