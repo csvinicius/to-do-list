@@ -44,7 +44,35 @@
     border-style: none;
 }
 
-img {
+.taskList {
+    margin-top: 4rem;
+} 
+
+
+.taskInfo {
     display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
+.taskInfoCreated {
+    color: var(--blue-300);
+}
+
+.taskInfoCompleted {
+    color: var(--purple-300);
+}
+
+.taskClipboardIcon {
+    display: flex;
+    justify-content: center;
     background: transparent;
+    margin: 4rem 0 1rem;
+}
+
+.taskMessage {
+    display: flex;
+    justify-content: center;
+    color: var(--gray-300);
 }

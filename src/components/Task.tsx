@@ -16,10 +16,25 @@ export function Task() {
                 </button>
             </form>
 
-            {/* <div className={styles.}>
-                <h1>XDDDDDD</h1>
-                <img src={clipboardIcon} alt="" />
-            </div> */}
+            <div className={styles.taskList}>
+                <div className={styles.taskInfo}>
+                    <span className={styles.taskInfoCreated}>Tarefas criadas</span>
+                    <span className={styles.taskInfoCompleted}>Concluídas</span>
+                </div>
+
+                <div className={styles.taskClipboardIcon}>
+                    <img src={clipboardIcon} alt="" />
+                </div>
+
+                <div className={styles.taskMessage}>
+                    <span>
+                        <strong>
+                            Você ainda não tem tarefas cadastradas
+                        </strong><br />
+                        Crie tarefas e organize seus itens a fazer
+                    </span>
+                </div>
+            </div>
         </div>
     );
 }
