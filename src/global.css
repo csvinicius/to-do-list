@@ -13,7 +13,7 @@
     --purple-300: #8284FA;
     --purple-500: #5E60CE;
 
-    --red-300: #E25858;
+    --danger: #E25858;
 }
 
 * {
@@ -26,7 +26,8 @@
     box-shadow: 0 0 0 1px var(--purple-500);
 }
 
-body {
+body,
+textarea {
     background: var(--gray-600);
     -webkit-font-smoothing: antialiased;
     font-family: 'Inter', sans-serif;

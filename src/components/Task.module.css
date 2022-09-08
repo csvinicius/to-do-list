@@ -1,78 +1,183 @@
+.taskWrapper {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
 .taskForm {
-    display: flex;
-    margin-top: -1rem; 
+  display: flex;
+  margin-top: -1rem;
 }
 
 .taskBox {
-    width: 39.875rem;
-    background: var(--gray-500);
-    color: var(--gray-300);
-    padding: 1rem;
+  width: 39.875rem;
+  background: var(--gray-500);
+  color: var(--gray-300);
+  padding: 1rem;
+  border: 0;
+  resize: none;
 }
 
 .taskBox:focus-within {
-    color: var(--gray-100);
+  color: var(--gray-100);
 }
 
-.taskCreate {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--blue-500);
-    color: var(--gray-100);
-    font-size: 0.875rem;
-    font-weight: bold;
-    padding: 0.875rem;
-    margin-left: 0.5rem;
+.createTaskButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue-500);
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.875rem;
+  margin-left: 0.5rem;
 
-    cursor: pointer;
-    transition: color 0.1s, background-color 0.1s;
+  cursor: pointer;
+  transition: color 0.1s, background-color 0.1s;
 }
 
-.taskCreate:hover {
-    background-color: var(--blue-300);
+.createTaskButton:hover {
+  background-color: var(--blue-300);
 }
 
-.taskCreateIcon {
-    margin-top: 4px;
-    margin-left: 4px;
+.createTaskButtonIcon {
+  margin-top: 4px;
+  margin-left: 4px;
 }
 
 .taskBox,
-.taskCreate {
-    border-radius: 8px;
-    border-style: none;
+.createTaskButton {
+  border-radius: 8px;
+  border-style: none;
 }
 
 .taskList {
-    margin-top: 4rem;
-} 
-
+  margin-top: 4rem;
+}
 
 .taskInfo {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.875rem;
-    font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: bold;
 }
 
 .taskInfoCreated {
-    color: var(--blue-300);
+  display: flex;
+  color: var(--blue-300);
+}
+
+.taskInfoCreatedCounter {
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+
+  background: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 8px;
+
+  width: 25px;
+  height: 19px;
 }
 
 .taskInfoCompleted {
-    color: var(--purple-300);
+  display: flex;
+}
+
+.taskInfoCompleted span{
+  color: var(--purple-300);
+}
+
+.taskInfoCompletedCounter {
+  display: flex;
+  justify-content: center;
+  margin-left: 0.5rem;
+
+  background: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 8px;
+  width: 52px;
+  height: 19px;
 }
 
 .taskClipboardIcon {
-    display: flex;
-    justify-content: center;
-    background: transparent;
-    margin: 4rem 0 1rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  margin: 4rem 0 1rem;
 }
 
 .taskMessage {
-    display: flex;
-    justify-content: center;
-    color: var(--gray-300);
+  display: flex;
+  justify-content: center;
+  color: var(--gray-300);
+}
+
+.taskListCreated {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+
+  margin-top: 2.5rem;
+  box-sizing: border-box;
+  padding: 1rem;
+
+  background: var(--gray-500);
+  border-radius: 8px;
+}
+
+.taskContent {
+  display: flex;
+}
+
+
+.taskCheckbox {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--gray-400);
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid var(--blue-300);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.taskCheckbox:focus {
+  box-shadow: none;
+}
+
+.taskCheckbox:checked {
+  border: 2px solid var(--purple-500);
+  background-color: var(--purple-500);
+}
+
+.taskCheckbox:checked::after {
+  padding: 0 1px 4px;
+  content: '\2713';
+  color: var(--gray-100);
+}
+
+
+.taskContent p {
+  margin-left: 12px;
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.deleteTaskButton {
+  background: transparent;
+  color: var(--gray-300);
+  border: 0;
+
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.deleteTaskButton:hover {
+  color: var(--danger);
 }
