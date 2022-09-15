@@ -155,10 +155,16 @@
   background-color: var(--purple-500);
 }
 
+
 .taskCheckbox:checked::after {
   padding: 0 1px 4px;
   content: '\2713';
   color: var(--gray-100);
+}
+
+.taskCheckbox:checked:disabled {
+  border: 2px solid var(--purple-500);
+  background-color: var(--purple-500);
 }
 
 
@@ -167,6 +173,11 @@
   color: var(--gray-100);
   font-size: 0.875rem;
   text-align: left;
+}
+
+.taskContent p[disabled] {
+  color: var(--gray-300);
+  text-decoration: line-through;
 }
 
 .deleteTaskButton {

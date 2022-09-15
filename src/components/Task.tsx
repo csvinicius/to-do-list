@@ -23,30 +23,51 @@ export function Task() {
         handleCreatedTaskCount();
     }
 
-    
+
     function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
         event.target.setCustomValidity('');
         setNewTaskText(event.target.value);
     }
-    
+
     function handleCreatedTaskCount() {
         setTaskCreatedCount((state) => state + 1);
     }
-    
+
     function handleDeleteTask(taskToDelete: any) {
         const tasksWithoutDeletedOne = tasks.filter(task => {
             return task !== taskToDelete;
         }
         );
-        
+
         setTasks(tasksWithoutDeletedOne);
         handleDeletedTaskCount();
     }
-    
+
     function handleDeletedTaskCount() {
         setTaskCreatedCount((state) => state - 1);
+
+        taskCompletedCount > 0 ? setTaskCompletedCount((state) => state - 1) : taskCompletedCount;
+
     }
-    
+
+    function handleCompleteTask(event: any) {
+        const checkbox = event.target;
+        const textElement = checkbox.nextElementSibling;
+
+        if (checkbox) {
+            event.target?.setAttribute('disabled', '');
+            textElement.setAttribute('disabled', '');
+        }
+
+        handleCompletedTaskCount();
+    }
+
+    function handleCompletedTaskCount() {
+        setTaskCompletedCount((state) => state + 1);
+    }
+
+
+
 
     return (
         <div className={styles.taskWrapper}>
@@ -105,7 +126,7 @@ export function Task() {
                             return (
                                 <div className={styles.taskListCreated} key={taskId++}>
                                     <div className={styles.taskContent}>
-                                        <input className={styles.taskCheckbox} type="checkbox" />
+                                        <input className={styles.taskCheckbox} type="checkbox" onClick={(event) => handleCompleteTask(event)} />
                                         <p>{task}</p>
                                     </div>
                                     <button onClick={() => handleDeleteTask(task)} className={styles.deleteTaskButton}>
